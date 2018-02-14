@@ -1,0 +1,82 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Calc.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50.09"/>
+            <RowDefinition Height="21.91"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,6.09">
+            <TextBlock x:Name="ApplicationTitle" Text="CALCULATOR" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="0,20.91,0,0" Grid.RowSpan="2" Grid.Row="1">
+            <Button x:Name="bdot" Content="." HorizontalAlignment="Left" Margin="0,567,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_dot" FontSize="48" BorderThickness="0" Background="#FF4D4949"/>
+            <Button x:Name="b0" Content="0" HorizontalAlignment="Left" Margin="116,568,0,-1" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_0" FontSize="48" BorderThickness="0" Background="#FF4D4949"/>
+            <Button x:Name="bequal" Content="=" HorizontalAlignment="Left" Margin="233,568,0,-1" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_total" FontSize="48" Background="#FF171515" BorderThickness="0"/>
+            <Button x:Name="bplus" Content="+" HorizontalAlignment="Right" Margin="0,567,1,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_plus" FontSize="48" Background="#FF171515" BorderThickness="0"/>
+            <Button x:Name="b7" Content="7" HorizontalAlignment="Left" Margin="0,219,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_7" FontSize="48" BorderThickness="0" Background="#FF4D4949"/>
+            <Button x:Name="b8" Content="8" HorizontalAlignment="Left" Margin="116,220,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_8" FontSize="48" BorderThickness="0" Background="#FF4D4949"/>
+            <Button x:Name="b9" Content="9" HorizontalAlignment="Left" Margin="233,220,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_9" FontSize="48" Background="#FF4D4949" BorderThickness="0"/>
+            <Button x:Name="bdiv" Content="/" HorizontalAlignment="Right" Margin="0,219,1,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_div" FontSize="48" Background="#FF171515" BorderThickness="0"/>
+            <Button x:Name="b4" Content="4" HorizontalAlignment="Left" Margin="0,335,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_4" FontSize="48" BorderThickness="0" Background="#FF4D4949"/>
+            <Button x:Name="b5" Content="5" HorizontalAlignment="Left" Margin="116,336,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_5" FontSize="48" BorderThickness="0" Background="#FF4D4949"/>
+            <Button x:Name="b6" Content="6" HorizontalAlignment="Left" Margin="233,336,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_6" FontSize="48" Background="#FF4D4949" BorderThickness="0"/>
+            <Button x:Name="bmul" Content="X" HorizontalAlignment="Right" Margin="0,335,1,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_mul" FontSize="48" Background="#FF171515" BorderThickness="0"/>
+            <Button x:Name="b1" Content="1" HorizontalAlignment="Left" Margin="0,451,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_1" FontSize="48" BorderThickness="0" Background="#FF4D4949"/>
+            <Button x:Name="b2" Content="2" HorizontalAlignment="Left" Margin="116,452,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_2" FontSize="48" BorderThickness="0" Background="#FF4D4949"/>
+            <Button x:Name="b3" Content="3" HorizontalAlignment="Left" Margin="233,452,0,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_3" FontSize="48" Background="#FF4D4949" BorderThickness="0"/>
+            <Button x:Name="bminus" Content="-" HorizontalAlignment="Right" Margin="0,451,1,0" VerticalAlignment="Top" Width="130" Height="130" Click="Button_Click_minus" FontSize="48" Background="#FF171515" BorderThickness="0"/>
+            <Button x:Name="bclear" Content="CLR" HorizontalAlignment="Right" Margin="0,140,1,0" VerticalAlignment="Top" Width="130" Height="94" Click="Button_Click_CLR" FontSize="36" Background="#FF171515" BorderThickness="0"/>
+            <TextBlock x:Name="textblock1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="135" Width="460" FontSize="60" TextAlignment="Right" TextWrapping="Wrap"/>
+            <Button x:Name="bscientific" Content="SCIENTIFIC" HorizontalAlignment="Right" Margin="0,-65,0,0" VerticalAlignment="Top" Width="191" Height="70" Click="scientific_click" FontSize="22" Background="#FF171515" BorderThickness="0"/>
+            <Button x:Name="bbackspace" Content="" HorizontalAlignment="Right" Margin="0,140,117,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="25" Background="#FF171515" BorderThickness="0"/>
+        </Grid>
+        <Button x:Name="bAC" Content="AC" HorizontalAlignment="Right" Margin="0,138.955,234,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="40" Background="#FF171515" BorderThickness="0" Foreground="#FFE26450" Grid.Row="2" Click="allClear"/>
+        <Button x:Name="shiftButton" Content="SHIFT" HorizontalAlignment="Right" Margin="0,138.955,350,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="32" Background="#FF4D4949" BorderThickness="0" Grid.Row="2"/>
+        <TextBlock x:Name="power10X_Copy2" HorizontalAlignment="Left" Margin="318,148.955,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Grid.Row="2"/>
+        <TextBlock x:Name="power10X_Copy3" HorizontalAlignment="Left" Margin="311,148.955,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Grid.Row="2"/>
+        <TextBlock x:Name="power10X_Copy4" HorizontalAlignment="Left" Margin="304,148.955,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Grid.Row="2"/>
+        <TextBlock x:Name="power10X_Copy5" HorizontalAlignment="Left" Margin="291,148.955,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Grid.Row="2"/>
+        <TextBlock x:Name="power10X_Copy6" HorizontalAlignment="Left" Margin="286,148.955,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Grid.Row="2"/>
+        <TextBlock x:Name="power10X_Copy8" HorizontalAlignment="Left" Margin="780.668,-495.169,-344.668,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Width="44" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <TextBlock.RenderTransform>
+                <CompositeTransform Rotation="270"/>
+            </TextBlock.RenderTransform>
+        	<Run Text="A"/>
+        	<LineBreak/>
+        	<Run/>
+        </TextBlock>
+        <TextBlock x:Name="power10X_Copy9" HorizontalAlignment="Left" Margin="36.333,35.625,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="36" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.RowSpan="3">
+            <TextBlock.RenderTransform>
+                <CompositeTransform Rotation="90"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="power10X_Copy1" HorizontalAlignment="Left" Margin="298,148.955,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Grid.Row="2"/>
+        <TextBlock x:Name="power10X_Copy10" HorizontalAlignment="Left" Margin="36.333,39.163,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="36" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.RowSpan="3">
+            <TextBlock.RenderTransform>
+                <CompositeTransform Rotation="90"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="power10X_Copy" HorizontalAlignment="Left" Margin="300,164.955,0,494.045" TextWrapping="Wrap" Text="X" VerticalAlignment="Center" FontSize="28" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Foreground="#FF0E0101" Grid.Row="2"/>
+        <Button Content="" HorizontalAlignment="Right" Margin="0,138.955,115,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="25" Background="{x:Null}" BorderThickness="0" Click="Button_Click_DELETE" Grid.Row="2"/>
+    </Grid>
+ 
+</phone:PhoneApplicationPage>

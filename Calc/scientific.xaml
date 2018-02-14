@@ -1,0 +1,122 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Calc.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50.09"/>
+            <RowDefinition Height="21.91"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,6.09">
+            <TextBlock x:Name="ApplicationTitle" Text="CALCULATOR" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="0,20.91,0,0" Grid.RowSpan="2" Grid.Row="1">
+            <Button x:Name="expButton" Content="e" HorizontalAlignment="Left" Margin="0,568,0,-1" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" BorderThickness="0" Background="#FF171515" Click="Button_Click_exp"/>
+            <Button x:Name="lparButton" Content="(" HorizontalAlignment="Left" Margin="116,568,0,-1" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" Background="#FF171515" BorderThickness="0" Click="button_click_lpar"/>
+            <Button x:Name="rparButton" Content=")" HorizontalAlignment="Right" Margin="0,568,117,-1" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" Background="#FF171515" BorderThickness="0" Click="button_click_rpar"/>
+            <Button x:Name="hyperButton" Content="hyp" HorizontalAlignment="Left" Margin="0,219,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" BorderThickness="0" Background="#FF171515" Click="button_click_hyper"/>
+            <Button x:Name="sinButton" Content="sin" HorizontalAlignment="Left" Margin="116,220,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" BorderThickness="0" Background="#FF171515" Click="Button_Click_sin"/>
+            <Button x:Name="cosButton" Content="cos" HorizontalAlignment="Left" Margin="233,220,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" Background="#FF171515" BorderThickness="0" Click="Button_Click_cos"/>
+            <Button x:Name="tanButton" Content="tan" HorizontalAlignment="Right" Margin="0,219,1,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" Background="#FF171515" BorderThickness="0" Click="Button_Click_tan"/>
+            <Button x:Name="lnButton" Content="ln" HorizontalAlignment="Left" Margin="0,335,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" BorderThickness="0" Background="#FF171515" Click="Button_Click_ln"/>
+            <Button x:Name="logButton" Content="log" HorizontalAlignment="Left" Margin="116,336,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" BorderThickness="0" Background="#FF171515" Click="Button_Click_log"/>
+            <Button x:Name="powerOfTenButton" Content="x10 " HorizontalAlignment="Left" Margin="233,336,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="38" Background="#FF171515" BorderThickness="0" Click="powerOf10"/>
+            <Button x:Name="factButton" Content="!" HorizontalAlignment="Right" Margin="0,335,1,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" Background="#FF171515" BorderThickness="0" Click="Button_Click_fact"/>
+            <Button x:Name="powerButton" Content="y" HorizontalAlignment="Left" Margin="0,451,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" BorderThickness="0" Background="#FF171515" Click="button_click_power"/>
+            <Button x:Name="sqrootButton" Content="/" HorizontalAlignment="Left" Margin="116,454,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" BorderThickness="0" Background="#FF171515" Click="Button_Click_sqroot"/>
+            <Button x:Name="squareButton" Content="x" HorizontalAlignment="Left" Margin="233,452,0,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" Background="#FF171515" BorderThickness="0" Click="button_click_square"/>
+            <Button x:Name="inverseButton" Content="/" HorizontalAlignment="Right" Margin="0,451,1,0" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" Background="#FF171515" BorderThickness="0" Click="Button_Click_inverse"/>
+            <Button x:Name="bclear" Content="CLR" HorizontalAlignment="Right" Margin="0,140,1,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="36" Background="#FF171515" BorderThickness="0" Click="Button_Click_CLR"/>
+            <TextBlock x:Name="textblock1Scientific" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="135" Width="460" FontSize="60" TextAlignment="Right" TextWrapping="Wrap"/>
+            <TextBox x:Name="textbox4" HorizontalAlignment="Left" Height="40" Margin="14,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Visibility="Collapsed"/>
+            <TextBox x:Name="textbox3" HorizontalAlignment="Left" Height="40" Margin="64,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Visibility="Collapsed"/>
+            <TextBox x:Name="textbox2" HorizontalAlignment="Left" Height="40" Margin="103,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Visibility="Collapsed"/>
+            <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="40" Margin="162,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Visibility="Collapsed"/>
+            <Button x:Name="bAC" Content="AC" HorizontalAlignment="Right" Margin="0,140,234,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="40" Background="#FF171515" BorderThickness="0" Foreground="#FFE26450" Click="allclear"/>
+            <Button x:Name="shiftButton" Content="SHIFT" HorizontalAlignment="Right" Margin="0,140,350,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="32" Background="#FF4D4949" BorderThickness="0" Click="Button_Click_shift"/>
+            <TextBlock x:Name="power10X" HorizontalAlignment="Left" Margin="323,359,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" FontSize="32" RenderTransformOrigin="2.684,5.093" FontWeight="Bold"/>
+            <TextBlock x:Name="square2" HorizontalAlignment="Left" Margin="312,488,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" FontSize="25"/>
+            <TextBlock x:Name="sqrootLine3" HorizontalAlignment="Left" Margin="166,513,0,0" TextWrapping="Wrap" Text="\" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="2.684,5.093"/>
+            <TextBlock x:Name="sqrootLine2" HorizontalAlignment="Left" Margin="163,518,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="8" FontWeight="Bold"/>
+            <TextBlock x:Name="sqrootLine" HorizontalAlignment="Left" Margin="196.01,481.459,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="36" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="90"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="powerX" HorizontalAlignment="Left" Margin="82,488,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" FontSize="25" FontWeight="Bold"/>
+            <TextBlock x:Name="u1" HorizontalAlignment="Left" Margin="162,234,0,0" TextWrapping="Wrap" Text="sin" VerticalAlignment="Top" FontSize="25"/>
+            <TextBlock x:Name="u3" HorizontalAlignment="Left" Margin="280,234,0,0" TextWrapping="Wrap" Text="cos" VerticalAlignment="Top" FontSize="25"/>
+            <TextBlock x:Name="u5" HorizontalAlignment="Left" Margin="394,234,0,0" TextWrapping="Wrap" Text="tan" VerticalAlignment="Top" FontSize="24"/>
+            <TextBlock x:Name="u2" HorizontalAlignment="Left" Margin="193,232,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" FontSize="21"/>
+            <TextBlock x:Name="u4" HorizontalAlignment="Left" Margin="317,233,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" FontSize="21"/>
+            <TextBlock x:Name="u6" HorizontalAlignment="Left" Margin="428,232,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" FontSize="21"/>
+            <TextBlock x:Name="u8" HorizontalAlignment="Left" Margin="171.332,468.332,0,0" TextWrapping="Wrap" Text="\" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="2.684,5.093" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="-0.403"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="u7" HorizontalAlignment="Left" Margin="165,471,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+            <TextBlock x:Name="u11" HorizontalAlignment="Left" Margin="195.993,457.092,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="26" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="90"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="u10" HorizontalAlignment="Left" Margin="178,463,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="28" RenderTransformOrigin="2.684,5.093"/>
+            <TextBlock x:Name="u9" HorizontalAlignment="Left" Margin="176,458,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="1.074,0.635"/>
+            <TextBlock x:Name="u12" HorizontalAlignment="Left" Margin="292,467,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" FontSize="24"/>
+            <TextBlock x:Name="u13" HorizontalAlignment="Left" Margin="307,461,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" FontSize="18"/>
+            <TextBlock x:Name="inverseX" HorizontalAlignment="Left" Margin="425,513,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+            <TextBlock x:Name="inverse1" HorizontalAlignment="Left" Margin="392,492,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="28"/>
+            <Button x:Name="bback" Content="BACK" HorizontalAlignment="Right" Margin="0,-65,0,0" VerticalAlignment="Top" Width="191" Height="70" Click="back_click" FontSize="22" Background="#FF171515" BorderThickness="0"/>
+            <Button x:Name="bbackspace" Content="" HorizontalAlignment="Right" Margin="0,140,117,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="25" Background="#FF171515" BorderThickness="0"/>
+            <TextBlock x:Name="power10X_Copy1" HorizontalAlignment="Left" Margin="298,151,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold"/>
+            <TextBlock x:Name="power10X_Copy2" HorizontalAlignment="Left" Margin="318,151,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold"/>
+            <TextBlock x:Name="power10X_Copy3" HorizontalAlignment="Left" Margin="311,151,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold"/>
+            <TextBlock x:Name="power10X_Copy4" HorizontalAlignment="Left" Margin="304,151,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold"/>
+            <TextBlock x:Name="power10X_Copy5" HorizontalAlignment="Left" Margin="291,151,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold"/>
+            <TextBlock x:Name="power10X_Copy6" HorizontalAlignment="Left" Margin="286,151,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold"/>
+            <TextBlock x:Name="power10X_Copy" HorizontalAlignment="Left" Margin="300,165,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" FontSize="28" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Foreground="#FF0E0101"/>
+            <TextBlock x:Name="power10X_Copy8" HorizontalAlignment="Left" Margin="780.668,-565.67,-344.668,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" Width="44" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="270"/>
+                </TextBlock.RenderTransform>
+            	<Run Text="A"/>
+            	<LineBreak/>
+            	<Run/>
+            </TextBlock>
+            <TextBlock x:Name="power10X_Copy9" HorizontalAlignment="Left" Margin="36.333,-34.375,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="36" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="90"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="power10X_Copy10" HorizontalAlignment="Left" Margin="36.333,-30.837,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" FontSize="36" RenderTransformOrigin="2.684,5.093" FontWeight="Bold" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="90"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button Content="" HorizontalAlignment="Right" Margin="0,140,117,0" VerticalAlignment="Top" Width="130" Height="94" FontSize="25" Background="{x:Null}" BorderThickness="0" Click="Button_Click_DELETE"/>
+            <Button x:Name="inverseButton2" Content="/" HorizontalAlignment="Right" Margin="0,568,1,-1" VerticalAlignment="Top" Width="130" Height="130" FontSize="40" Background="#FF171515" BorderThickness="0" Click="Button_Click_inverse2"/>
+            <TextBlock x:Name="inverse2X" HorizontalAlignment="Left" Margin="425,630,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+            <TextBlock x:Name="inverse21" HorizontalAlignment="Left" Margin="392,609,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="28"/>
+            <TextBlock x:Name="inverse2x2" HorizontalAlignment="Left" Margin="445,619,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" FontSize="20"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
